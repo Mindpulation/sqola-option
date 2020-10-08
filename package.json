@@ -1,0 +1,31 @@
+{
+  "name": "sqola-option",
+  "version": "1.0.0",
+  "description": "sqola-option",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mindpulation/sqola-option.git"
+  },
+  "author": "Mindpulation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mindpulation/sqola-option/issues"
+  },
+  "homepage": "https://github.com/Mindpulation/sqola-option#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^14.0.1",
+    "mongooo": "^1.1.4",
+    "raven": "^2.6.4",
+    "uuid": "^8.3.0",
+    "validate.js": "^0.13.1"
+  }
+}
