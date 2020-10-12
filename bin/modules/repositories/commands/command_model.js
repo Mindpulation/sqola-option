@@ -1,21 +1,21 @@
 const joi = require('joi');
 
-const addOption = joi.object({
+const addData = joi.object({
   type : joi.string().required(),
   name : joi.array().required()
 });
 
-const updateOption = joi.object({
+const updateData = joi.object({
   type : joi.string().required(),
   name : joi.array().required()
 });
 
-const deleteOption = joi.object({
-  type : joi.string().require()
+const deleteData = joi.object({
+  type : joi.string().required()
 });
 
 module.exports = {
-  addOption,
-  updateOption,
-  deleteOption
+  addData,
+  updateData,
+  deleteData
 }
