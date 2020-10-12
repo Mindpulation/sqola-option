@@ -15,8 +15,13 @@ const deleteData = joi.object({
   type : joi.string().required()
 });
 
+const findData = joi.object({
+  type : joi.string().required()
+})
+
 module.exports = {
   addData,
   updateData,
-  deleteData
+  deleteData,
+  findData
 }

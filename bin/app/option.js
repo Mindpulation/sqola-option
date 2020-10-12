@@ -6,7 +6,9 @@ app.post('/create', async (req , res) => {
   await optionHandlers.createOption(req, res)
 });
 
-app.get('/get')
+app.post('/get', async (req, res) => {
+  await optionHandlers.findOption(req, res)
+})
 
 app.put('/update', async (req, res) => {
   await optionHandlers.updateOption(req, res)

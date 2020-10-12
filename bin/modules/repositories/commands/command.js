@@ -72,8 +72,27 @@ const updateOption = async (loadData) => {
   return result;
 }
 
-const findOption = async (laodData) => {
-
+const findOption = async (loadData) => {
+  const result = {
+    "err" : true,
+    "message" : "Failed to find option data"
+  };
+  try{
+  
+    const dbResult = await find(con, loadData.data.type, {})
+    if(dbResult == false){
+      result.err = true,
+      result.message = "Data not found"
+    }else{
+      result.err = false,
+      result.message = dbResult;
+    }
+  
+  }catch (e) {
+    result.err = true,
+    result.message = "Something went wrong"
+  }
+  return result;
 }
 
 const removeOption = async (loadData) => {

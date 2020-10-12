@@ -4,11 +4,16 @@ const addDataOption = (loadDataAdd) => {
   return command.addOption(loadDataAdd)
 }
 
-const updateDataOption = (loadDataOption) => {
-  return command.updateOption(loadDataOption)
+const updateDataOption = (loadDataUpdate) => {
+  return command.updateOption(loadDataUpdate)
+}
+
+const findDataOption = (loadDataFind) => {
+  return command.findOption(loadDataFind)
 }
 
 module.exports = {
   addDataOption,
   updateDataOption,
+  findDataOption,
 }
