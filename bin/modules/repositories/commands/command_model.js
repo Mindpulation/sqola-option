@@ -6,8 +6,9 @@ const addData = joi.object({
 });
 
 const updateData = joi.object({
-  type : joi.string().required(),
-  name : joi.array().required()
+  findType : joi.string().required(),
+  type : joi.string().optional(),
+  name : joi.array().optional()
 });
 
 const deleteData = joi.object({

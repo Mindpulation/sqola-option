@@ -44,7 +44,32 @@ const addOption = async (loadData) => {
 
 
 const updateOption = async (loadData) => {
-
+  const result = {
+    "err" : true,
+    "message" : "Failed to update"
+  };
+  try{
+    const loadDatas = (loadData) =>{
+      delete loadData.data.findType
+      const data = {
+        ...loadData.data,
+      }
+      return data;
+    }
+    const dbResult = await set(con, {"type": loadData.data.findType}, loadDatas(loadData));
+    if(dbResult == false){
+      result.err = true,
+      result.message = "Failed to update option"
+    }else{
+      result.err = false,
+      result.message = "Success to update option"
+    }
+    
+  }catch (e) {
+    result.err = true,
+    result.message = "Something went wrong"
+  }
+  return result;
 }
 
 const findOption = async (laodData) => {
