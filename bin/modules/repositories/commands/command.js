@@ -79,7 +79,7 @@ const findOption = async (loadData) => {
   };
   try{
   
-    const dbResult = await find(con, loadData.data.type, {})
+    const dbResult = await find(con, loadData.data, {})
     if(dbResult == false){
       result.err = true,
       result.message = "Data not found"
@@ -96,7 +96,26 @@ const findOption = async (loadData) => {
 }
 
 const removeOption = async (loadData) => {
-
+  const result = {
+    "err" : true,
+    "message" : "Failed to delete data option"
+  };
+  try{
+  
+    const dbResult = await del(con, loadData.data)
+    if(dbResult == false){
+      result.err = true,
+      result.message = "Data not found"
+    }else{
+      result.err = false,
+      result.message = "succes delete data option ", loadData.data;
+    }
+  
+  }catch (e) {
+    result.err = true,
+    result.message = "Something went wrong"
+  }
+  return result;
 }
 
 module.exports = {

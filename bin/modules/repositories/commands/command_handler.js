@@ -12,8 +12,13 @@ const findDataOption = (loadDataFind) => {
   return command.findOption(loadDataFind)
 }
 
+const deleteDataOption = (loadDataDelete) => {
+  return command.removeOption(loadDataDelete)
+}
+
 module.exports = {
   addDataOption,
   updateDataOption,
   findDataOption,
+  deleteDataOption
 }

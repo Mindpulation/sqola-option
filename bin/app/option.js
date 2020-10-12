@@ -14,6 +14,8 @@ app.put('/update', async (req, res) => {
   await optionHandlers.updateOption(req, res)
 });
 
-app.delete('/delete')
+app.delete('/delete', async (req, res) => {
+  await optionHandlers.deleteOption(req, res)
+})
 
 module.exports = app;
