@@ -56,7 +56,7 @@ const findOption = async (req, res) => {
 }
 
 const deleteOption = async (req, res) => {
-  const validate = validator.isValidPayload(req.body, deleteData);
+  const validate = validator.isValidPayload({type : req.params.type}, deleteData);
   const postRequest = async (result) => {
     if (result.err) {
       return result;
