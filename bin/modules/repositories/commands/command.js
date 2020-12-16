@@ -80,7 +80,7 @@ const findOption = async (loadData) => {
   };
   try{
     console.log(loadData);
-    const dbResult = await find(con, loadData.data)
+    const dbResult = await find(con, {"type" : loadData.data.type})
     console.log(dbResult);
     if(dbResult === false){
       result.err = true,
