@@ -1,9 +1,10 @@
 const config = require ('config');
 const { Delete } = require('mongooo');
 const Mongo = require('mongooo').Mongooo;
+const Mongoo = require('mongooo');
+const {find, findOne} = Mongoo.Find;
 const { save } = require('mongooo').Save;
 const { set } = require('mongooo').Update;
-const { find, findOne } = require('mongooo').Find;
 const { del } = require('mongooo').Delete;
 
 const mongo = new Mongo();
@@ -78,8 +79,9 @@ const findOption = async (loadData) => {
     "message" : "Failed to find option data"
   };
   try{
-  
-    const dbResult = await find(con, loadData.data, {})
+    console.log(loadData);
+    const dbResult = await find(con, loadData.data)
+    console.log(dbResult);
     if(dbResult === false){
       result.err = true,
       result.message = "Data not found"
