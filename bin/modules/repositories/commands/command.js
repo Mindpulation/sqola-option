@@ -80,7 +80,7 @@ const findOption = async (loadData) => {
   try{
   
     const dbResult = await find(con, loadData.data, {})
-    if(dbResult == false){
+    if(dbResult === false){
       result.err = true,
       result.message = "Data not found"
     }else{
